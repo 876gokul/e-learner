@@ -1,0 +1,126 @@
+h1 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 3rem;
+}
+p {
+  margin: 0.2rem 0;
+}
+h6 {
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+.my-container {
+  max-width: 85%;
+  margin: 0 auto;
+}
+.my-card {
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid #8d8d8d;
+  margin: 1rem auto;
+  transition: box-shadow 0.4s;
+}
+.my-card-image {
+  width: max-content;
+  margin-right: 1rem;
+}
+.my-card-title {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1rem;
+  margin: 0.6rem auto;
+}
+.my-card .content {
+  padding: 0.5rem;
+}
+.my-card-description {
+  font-size: 0.75rem;
+  color: #3a3a3a;
+}
+.rating {
+  color: #8d8d8d;
+}
+.author {
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0.2rem 0;
+  margin-right: 0.25rem;
+}
+.fa-star {
+  color: rgb(255, 193, 24);
+  border: none;
+  /* font-size: 0.7rem; */
+  margin-right: 0.3rem;
+}
+.flex-container {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.3rem;
+}
+.my-card:hover {
+  box-shadow: 3px 6px 10px rgba(99, 99, 99, 0.5);
+}
+.my-btn {
+  display: inline-block;
+  border: 1px solid #3a3a3a;
+  color: #3a3a3a;
+  background: white;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 1rem;
+  /* border-radius: 5%; */
+  transition: all 0.2s;
+  cursor: pointer;
+}
+.my-btn:hover {
+  background: #3a3a3a;
+  color: white;
+}
+.my-btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fa-times {
+  cursor: pointer;
+}
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 90vh;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  outline: 0;
+}
+@media screen and (max-width: 700px) {
+  .my-btn-group {
+    display: block;
+    text-align: center;
+  }
+  .my-btn {
+    display: block;
+    text-align: center;
+  }
+  .my-card {
+    flex-direction: column;
+    max-width: 240px;
+  }
+  .my-card .content {
+    padding: 0.5rem;
+  }
+  .my-card-image {
+    width: 100%;
+  }
+}
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 90%;
+    max-height: 90%;
+    margin: 1.75rem auto;
+  }
+}

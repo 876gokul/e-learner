@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import CardList from "./components/card.list.component";
+import Category from "./components/Category";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      userData: [],
+      catogery: "",
+    };
+  }
+  componentDidMount() {
+    const data = require("./CourseData.json");
+    this.setState({ userData: data });
+  }
+  render() {
+    const { userData } = this.state;
+    const newSate = userData.filter(
+      (data) => data.Category === this.state.catogery
+    );
+    return (
+      <div className="App">
+        <Category
+          handleChange={(e) => {
+            if (e.target.innerHTML) {
+              this.setState({ catogery: e.target.innerHTML });
+            } else {
+              this.setState({ catogery: "" });
+            }
+          }}
+        />
+        <CardList userData={newSate.length > 0 ? newSate : userData} />
+      </div>
+    );
+  }
 }
 
 export default App;
