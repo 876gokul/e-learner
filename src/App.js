@@ -1,6 +1,10 @@
 import React from "react";
 import CardList from "./components/card.list.component";
 import Category from "./components/Category";
+import Navbar from "./components/Navbar";
+import Authmodal from "./components/Authmodal";
+import Carousel from "./components/Carousel";
+import Footer from "./components/footer";
 import "./App.css";
 
 class App extends React.Component {
@@ -22,6 +26,16 @@ class App extends React.Component {
     );
     return (
       <div className="App">
+        <Navbar
+          handleChange={(e) => {
+            if (e.target.innerHTML) {
+              this.setState({ catogery: e.target.innerHTML });
+            } else {
+              this.setState({ catogery: "" });
+            }
+          }}
+        />
+        <Carousel />
         <Category
           handleChange={(e) => {
             if (e.target.innerHTML) {
@@ -32,6 +46,8 @@ class App extends React.Component {
           }}
         />
         <CardList userData={newSate.length > 0 ? newSate : userData} />
+        <Authmodal />
+        <Footer />
       </div>
     );
   }

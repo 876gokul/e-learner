@@ -3,7 +3,7 @@ import Button from "./Button";
 function Category({ handleChange }) {
   const category = ["Developement", "Design", "Marketing", "Business", "Music"];
   return (
-    <div className="my-container">
+    <div className="container">
       <h1>Explore</h1>
       <hr />
       <div className="my-btn-group">

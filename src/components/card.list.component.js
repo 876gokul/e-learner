@@ -4,7 +4,7 @@ import Model from "./model";
 import "./card.css";
 function CardList(props) {
   return (
-    <div className="my-container">
+    <div className="container">
       <div className="inner-container">
         {props.userData.map((data, index) => (
           <Card key={index} data={data} id={data.id} />
